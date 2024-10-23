@@ -1,8 +1,3 @@
-
-import React from "react";
-
-import ReactDOM from "react-dom/client";
-
 const data = 
 [
     {
@@ -90,7 +85,7 @@ const data =
                 "Desserts",
                 "Snacks"
             ],
-            "avgRating": 4.6,
+            "avgRating": 3.6,
             "veg": true,
             "parentId": "3767",
             "avgRatingString": "4.6",
@@ -255,7 +250,7 @@ const data =
                 "Biryani",
                 "Mughlai"
             ],
-            "avgRating": 4.3,
+            "avgRating": 3.8,
             "parentId": "19714",
             "avgRatingString": "4.3",
             "totalRatingsString": "10K+",
@@ -391,7 +386,7 @@ const data =
             "cuisines": [
                 "Paan"
             ],
-            "avgRating": 4.2,
+            "avgRating": 4,
             "veg": true,
             "parentId": "627",
             "avgRatingString": "4.2",
@@ -478,7 +473,7 @@ const data =
                 "Beverages",
                 "Desserts"
             ],
-            "avgRating": 4.3,
+            "avgRating": 3.9,
             "parentId": "102877",
             "avgRatingString": "4.3",
             "totalRatingsString": "10K+",
@@ -1176,71 +1171,4 @@ const data =
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     }
 ]
-const ResCard = (props) =>{
-  const {data} = props
-  console.log('props',props)
-  const {name,cuisines,avgRating,deliveryTime} = data?.info
-  
-  return(
-    <div className="res-card">
-      <div className="image-container">
-        <img id="res-logo" src = {"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+data.info.cloudinaryImageId}/>
-      </div>
-      <h3>{name}</h3>
-      <h5>{cuisines.join(", ")}</h5>
-      <h5>{avgRating}</h5>
-      <h5>{data.info.sla.deliveryTime}</h5>
-      
-    </div>
-  )
-}
-Body = () => {
-  return(
-    <div className="body">
-      <div className="search">
-        <h5>search</h5>
-        <input type="text" className="searchbox"/>
-      </div>
-      <div className="res-container">
-        {
-          data.map((item)=>(
-            <ResCard key = {item.info.id} data={item}/>
-          ))
-        }
-      </div>
-
-    </div>
-  )
-}
-
-const Header = () =>{
-  return(
-    <div className="header">
-      <div className="logo">
-          <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwv45iAbWWwD5glterGTBIO6Q6pnjukcFkGw&usqp=CAU" alt="logo"/>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-
-      </div>
-
-    </div>
-  )
-}
-
-const AppLayout = () => {
-  return(
-    <div className="app">
-      <Header/>
-      <Body/>
-    </div>
-  )
-
-}
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout/>)
+export default data;
