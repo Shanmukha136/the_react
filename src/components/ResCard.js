@@ -1,3 +1,4 @@
+
 import { CLOUDINARY_IMAGE } from "../utils/constants"
 const ResCard = (props) =>{
     const {data} = props

@@ -1,4 +1,3 @@
-// import { HEADER_IMAGE } from "../utils/constants"
 import { HEADER_IMAGE } from "../utils/constants"
 const Header = () =>{
     return(
@@ -13,9 +12,9 @@ const Header = () =>{
             <li>Contact Us</li>
             <li>Cart</li>
           </ul>
-  
+
         </div>
-  
+
       </div>
     )
   }
