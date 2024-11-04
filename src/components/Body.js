@@ -3,10 +3,10 @@ import React, {useState} from 'react'
 import ResCard from './ResCard'
 import data from '../utils/data'
 const Body = () =>{
-  // const [resData,setResData]= useState(data)
-  const arr = useState(data)
+  const [resData,setResData]= useState(data)
+  {/*const arr = useState(data)
   const resData = arr[0];
-  const setResData = arr[1];
+const setResData = arr[1];*/}
   return(
     <div className="body-container">
       <div>
