@@ -1,9 +1,9 @@
 import { RECIPE_IMAGE } from "../utils/constants";
 const ResCard = (props) =>{
   const {data} =props
-  console.log("props are",props)
-  const {name,cloudinaryImageId,locality,avgRating} = data?.card?.info;
-  console.log("name is",name)
+  // console.log("props are",props)
+  const {name,cloudinaryImageId,locality,avgRating} = data?.info;
+  // console.log("name is",name)
   return(
       <div className="rescard">
         <img id="resimg" src={`${RECIPE_IMAGE}${cloudinaryImageId}`}/>
