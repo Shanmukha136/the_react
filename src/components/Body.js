@@ -14,14 +14,10 @@ const Body = () =>{
   },[]);
   const fetchData = async()=>{
     console.log("fetchdata is called")
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3724&lng=78.4378&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null")
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const json= await data.json();
     console.log("api json format",json.data.cards)
-    // let cards = json.data.cards.map((item)=>(item.card).filter((card)=>card.info))
-    let cards = json.data.cards
-      .map((item) => item.card.card) // Access the nested `card.card`
-      .filter((card) => card.info) // Keep only cards that have `info` property
-      
+    let cards = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     console.log("cards are",cards)
     setResData(cards)
     setFilteredRestaurant(cards)
@@ -70,22 +66,16 @@ const Body = () =>{
         </div>
       </div>
       <div className='res-container'>
-      {
-    filterdRestaurant.map((item) => (
-      item?.info ? (
-        <ResCard 
-          key={item.info.id}
-          data={item}
-        />
-      ) : null
-    ))
-  }
-        {/* {resData.map((item)=>(
-            <ResCard 
-              key={item.card.collectionId}
-              data={item}
-            />
-        ))} */}
+        {
+          filterdRestaurant.map((item) => (
+            item?.info ? (
+              <ResCard 
+                key={item.info.id}
+                data={item}
+              />
+            ) : null
+          ))
+        }
       </div>
     </div>
   )
