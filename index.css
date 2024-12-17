@@ -159,3 +159,26 @@ p{
     font-weight: bold;
     border-radius: 10px;
 }
+.shimmer-cards{
+    display: flex;
+}
+.shimmer-card{
+    /* margin:10px;
+    height: 400px;
+    width: 250px;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(148, 143, 136); */
+    margin:10px;
+    height: 400px;
+    width: 250px;
+    /* border: 2px solid black; */
+    align-items: center;
+    background-color: rgba(237, 240, 229, 0.822);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.login-btn{
+    padding: 10px;
+}
